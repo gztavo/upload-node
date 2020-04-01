@@ -2,6 +2,11 @@ const routes = require('express').Router();
 const multer = require('multer');//upload
 const multerConfig = require("./config/multer");
 
+
+routes.get('/', (req, res)=>{
+return res.json({ NODEJS: 'Dev - Gustavo Rosa'});
+});
+
 const Post = require('./models/Post');
 routes.get('/posts', async(req, res)=>{
     const posts = await Post.find();
